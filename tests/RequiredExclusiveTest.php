@@ -1,12 +1,19 @@
 <?php
 
-namespace Tests\Unit;
+namespace Thedavefulton\LaravelExclusiveValidationRules\Tests;
 
-use Tests\TestCase;
+use Orchestra\Testbench\TestCase;
+use Thedavefulton\LaravelExclusiveValidationRules\ExclusiveValidationRulesServiceProvider;
 
 class RequiredExclusiveTest extends TestCase
 {
-    //
+    protected function getPackageProviders($app)
+    {
+        return [
+            ExclusiveValidationRulesServiceProvider::class,
+        ];
+    }
+
     /** @test */
     public function it_requires_at_least_one_input()
     {

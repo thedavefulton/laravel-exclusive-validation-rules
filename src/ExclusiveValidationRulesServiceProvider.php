@@ -12,14 +12,6 @@ class ExclusiveValidationRulesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
         Validator::extendImplicit('required_exclusive', function ($attribute, $value, $parameters, $validator) {
             $validator->requireParameterCount(1, $parameters, 'required_exclusive');
 
@@ -81,5 +73,13 @@ class ExclusiveValidationRulesServiceProvider extends ServiceProvider
 
             return "You must submit exactly one or none of: {$fields}";
         });
+    }
+
+    /**
+     * Register the application services.
+     */
+    public function register()
+    {
+        //
     }
 }

@@ -1,11 +1,19 @@
 <?php
 
-namespace Tests\Unit;
+namespace Thedavefulton\LaravelExclusiveValidationRules\Tests;
 
-use Tests\TestCase;
+use Orchestra\Testbench\TestCase;
+use Thedavefulton\LaravelExclusiveValidationRules\ExclusiveValidationRulesServiceProvider;
 
 class OptionalExclusiveTest extends TestCase
 {
+    protected function getPackageProviders($app)
+    {
+        return [
+            ExclusiveValidationRulesServiceProvider::class,
+        ];
+    }
+
     /** @test */
     public function it_allows_no_inputs()
     {
