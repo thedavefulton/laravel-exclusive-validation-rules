@@ -110,7 +110,6 @@ class RequiredExclusiveTest extends TestCase
         ];
         $this->assertTrue($this->app['validator']->make($attributes, $rules)->passes());
 
-
         $rules = [
             'input1' => 'string',
         ];
