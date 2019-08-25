@@ -17,6 +17,15 @@ You can install the package via composer:
 composer require thedavefulton/laravel-exclusive-validation-rules
 ```
 
+The package is configured to use Laravel's automatic discovery.  However, you can manually register the service provider in the ```app/config.php``` file:
+``` php
+'providers' => [
+    // Other Service Providers
+
+    Thedavefulton\ExclusiveValidationRulesServiceProvider::class,
+],
+```
+
 ## Usage
 These rules may be used like any standard validation rule.
 ``` php
